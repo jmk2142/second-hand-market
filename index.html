@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shuai Yuan's Second-hand goods</title>
+  <style media="screen">
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  </style>
+</head>
+<body>
+  <home></home>
+
+  <script src="https://use.fontawesome.com/a83dd58713.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/riot@3.8/riot.min.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/goods.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/itemManager.js"></script>
+  <script type="text/javascript">
+    riot.mount("*");
+    window.onscroll = function() {scrollFunction()};
+    let nav = document.querySelector('nav');
+    let content = document.querySelector('.content');
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          nav.classList.add('nav-follow')
+          content.classList.add('content-backup')
+      } else {
+          nav.classList.remove('nav-follow')
+          content.classList.remove('content-backup')
+      }
+    }
+  </script>
+  <script>
+
+
+  </script>
+</body>
+</html>
