@@ -3,6 +3,7 @@
   <div class="Goods">
     <div class="good" each = {goods} onclick={check}>
       <img src={img} alt="" name={name}>
+      <button type="button" name="button" onclick={add}>Add to Chart</button>
       <p class="good_name">{name}</p>
     </div>
   </div>
@@ -71,6 +72,11 @@
     name = this.name;
     src = this.img;
     description = this.description;
+    that.showDetail = true;
+    that.itemName = name;
+    that.imgSource = src;
+    that.description = description;
+    that.update();
   }
 
   this.closeDetail = function(e) {
@@ -78,26 +84,17 @@
     this.update();
   }
 
-  this.on('update', function(e) {
-    this.showDetail = true;
-    this.itemName = name;
-    this.imgSource = src;
-    this.description = description;
-  })
+  this.add = function(event) {
+    this.parent.parent.item++;
+    this.parent.parent.update();
+    this.parent.parent.itemList.push(event.item.name)
+    event.stopPropagation()
+  }
 
 
 
 
 
-
-
-  // this.showText = true;
-  // this.check2 = function() {
-  //   this.showText = !this.showText;
-  // }
-
-
-  // this.showDetail = false;
   </script>
 
 
@@ -138,6 +135,37 @@
       width: 100%;
     }
 
+    .good button {
+      float: left;
+      width: 100px;
+      height: 30px;
+      background: transparent;
+      /*border-radius: 5px;*/
+      border: 1px solid #222;
+      position: relative;
+    }
+
+    .good button:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: 0px;
+      background: #222;
+      transition: all .2s;
+      z-index: -100;
+    }
+
+    .good button:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .good button:hover:after {
+      height: 30px;
+    }
+
     .good:hover {
       cursor: pointer;
       transform: scale(1.01);
@@ -145,6 +173,7 @@
     }
     .good_name {
       transition: all 0.3s;
+      margin: 5px 0;
       margin-right: 10px;
     }
     .good:hover .good_name {
