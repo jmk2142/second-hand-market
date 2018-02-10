@@ -2,9 +2,9 @@
 <home>
   <nav>
     <h1>Take Anything You Want</h1>
-    <div class="shopping-cart">
+    <div class="shopping-cart" onclick={viewAdded}>
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      <div id="shop-number">{ item }</div>
+      <div id="shop-number" show = { item }>{ item }</div>
     </div>
   </nav>
   <div class="content">
@@ -12,10 +12,17 @@
 
   </div>
 
+  <addedList show={viewList} class="cart"></addedList>
 
   <script>
-    this.item = 1;
+    this.item = 0;
+    this.itemList = [];
+    this.viewList = false;
+    this.viewAdded = function() {
+      this.viewList = !this.viewList;
+    }
 
+    var that = this;
   </script>
 
   <style>
@@ -59,7 +66,7 @@
 
     .nav-follow {
       border-bottom: 1px solid #ccc;
-      background: rgba(50, 50, 50, 0.82);
+      background: rgba(10, 10, 10, 0.98);
       color: #fff;
       position: fixed;
       top: 0;
@@ -67,7 +74,6 @@
       z-index: 100;
 
     }
-
 
     .content-backup {
       padding-top: 87.81px;
@@ -80,6 +86,10 @@
     .shopping-cart:hover {
       cursor: pointer;
       transform: scale(1.15);
+    }
+
+    .chart {
+
     }
   </style>
 </home>

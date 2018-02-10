@@ -1,5 +1,5 @@
 
-riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick="{check}"> <img riot-src="{img}" alt="" name="{name}"> <p class="good_name">{name}</p> </div> </div> <detail show="{showDetail}" title="{itemName}"> <img riot-src="{this.parent.imgSource}" alt=""> <p>{this.parent.description}</p> <h3>{this.parent.itemName}</h3> </detail>', 'goods p,[data-is="goods"] p{ color: #000; } goods .Goods,[data-is="goods"] .Goods{ display: flex; flex-wrap: wrap; justify-content: center; text-align: right; } goods .good,[data-is="goods"] .good{ margin: 10px; border: 1px solid #ccc; transition: all 0.4s; padding: 10px; border-radius: 5px; box-shadow: 5px 10px 20px rgba(200, 200, 200, 0.5); max-width: 300px; } goods .good img,[data-is="goods"] .good img{ width: 100%; } goods .good:hover,[data-is="goods"] .good:hover{ cursor: pointer; transform: scale(1.01); box-shadow: 5px 10px 20px rgba(100, 100, 100, 0.5); } goods .good_name,[data-is="goods"] .good_name{ transition: all 0.3s; margin-right: 10px; } goods .good:hover .good_name,[data-is="goods"] .good:hover .good_name{ color: rgb(12, 27, 62); }', '', function(opts) {
+riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick="{check}"> <img riot-src="{img}" alt="" name="{name}"> <button type="button" name="button" onclick="{add}">Add to Chart</button> <p class="good_name">{name}</p> </div> </div> <detail show="{showDetail}" title="{itemName}"> <img riot-src="{this.parent.imgSource}" alt=""> <p>{this.parent.description}</p> <h3>{this.parent.itemName}</h3> </detail>', 'goods p,[data-is="goods"] p{ color: #000; } goods .Goods,[data-is="goods"] .Goods{ display: flex; flex-wrap: wrap; justify-content: center; text-align: right; } goods .good,[data-is="goods"] .good{ margin: 10px; border: 1px solid #ccc; transition: all 0.4s; padding: 10px; border-radius: 5px; box-shadow: 5px 10px 20px rgba(200, 200, 200, 0.5); max-width: 300px; } goods .good img,[data-is="goods"] .good img{ width: 100%; } goods .good button,[data-is="goods"] .good button{ float: left; width: 100px; height: 30px; background: transparent; border: 1px solid #222; position: relative; } goods .good button:after,[data-is="goods"] .good button:after{ content: ""; position: absolute; top: 0; left: 0; width: inherit; height: 0px; background: #222; transition: all .2s; z-index: -100; } goods .good button:hover,[data-is="goods"] .good button:hover{ color: #fff; cursor: pointer; } goods .good button:hover:after,[data-is="goods"] .good button:hover:after{ height: 30px; } goods .good:hover,[data-is="goods"] .good:hover{ cursor: pointer; transform: scale(1.01); box-shadow: 5px 10px 20px rgba(100, 100, 100, 0.5); } goods .good_name,[data-is="goods"] .good_name{ transition: all 0.3s; margin: 5px 0; margin-right: 10px; } goods .good:hover .good_name,[data-is="goods"] .good:hover .good_name{ color: rgb(12, 27, 62); }', '', function(opts) {
   this.goods = [
     {
       name: 'Fans',
@@ -58,6 +58,11 @@ riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick
     name = this.name;
     src = this.img;
     description = this.description;
+    that.showDetail = true;
+    that.itemName = name;
+    that.imgSource = src;
+    that.description = description;
+    that.update();
   }
 
   this.closeDetail = function(e) {
@@ -65,11 +70,11 @@ riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick
     this.update();
   }
 
-  this.on('update', function(e) {
-    this.showDetail = true;
-    this.itemName = name;
-    this.imgSource = src;
-    this.description = description;
-  })
+  this.add = function(event) {
+    this.parent.parent.item++;
+    this.parent.parent.update();
+    this.parent.parent.itemList.push(event.item.name)
+    event.stopPropagation()
+  }
 
 });
