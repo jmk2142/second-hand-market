@@ -7,8 +7,7 @@
     </div>
 
   <script>
-    this.on('update', function(){
-    })
+    
   </script>
 
   <style scoped>

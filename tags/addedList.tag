@@ -1,12 +1,19 @@
 
 <addedList>
   <div class="sidebar">
-    <div class="close" onclick={close}>
-      <i class="fa fa-times"></i>
+    <div class="stick-top">
+      <div class="close" onclick={close}>
+        <i class="fa fa-times"></i>
+      </div>
+      <button type="button" name="button" onclick= {clearList}>Clear the Cart</button>
     </div>
-    <ul class="list">
+    <h3>Your Shopping Cart</h3>
+    <ul class="list" show={this.parent.itemList.length}>
       <li each={ i in this.parent.itemList}> {i}</li>
     </ul>
+    <p hide={this.parent.itemList.length}>
+      Nothing in the cart, please pick up some stuff.
+    </p>
   </div>
 
   <script>
@@ -14,6 +21,12 @@
 
     this.close = function() {
       this.parent.viewList = !this.parent.viewList;
+    }
+
+    this.clearList = function() {
+      this.parent.itemList = [];
+      this.parent.item = 0;
+      this.parent.update();
     }
   </script>
 
@@ -32,6 +45,24 @@
       top: 0;
       z-index: 1000;
       overflow: auto;
+    }
+
+    .stick-top {
+      display: flex;
+    }
+
+    .stick-top button {
+      margin-left: 65%;
+      border: 1px solid #fff;
+      transition: all .4s;
+      background: transparent;
+      color: #fff;
+    }
+
+    .stick-top button:hover {
+      background: #fff;
+      color: #222;
+      cursor: pointer;
     }
 
     .close {
@@ -73,5 +104,11 @@
       list-style: none;
       padding: 20px 0;
     }
+
+    h3, p {
+      color: #fff;
+      padding-left: 20px;
+    }
+
   </style>
 </addedList>

@@ -1,4 +1,2 @@
 riot.tag2('detail', '<div class="container" onclick="{parent.closeDetail}"> <div class=""> <yield></yield> </div> </div>', 'detail .container,[data-is="detail"] .container{ position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(10, 10, 10, 0.8); } detail .container > div,[data-is="detail"] .container > div{ display: flex; color: #fff; justify-content: space-around; align-items: center; vertical-align: top; margin-top: 15%; flex-wrap: wrap; } detail .container img,[data-is="detail"] .container img{ flex-basis: 1; width: 50%; height: auto; } detail .container p,[data-is="detail"] .container p{ flex-basis: 400px; color: #fff; text-align: center; } detail .container h3,[data-is="detail"] .container h3{ margin-top: 50px; text-align: center; flex-basis: 100%; }', '', function(opts) {
-    this.on('update', function(){
-    })
 });

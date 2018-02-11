@@ -9,10 +9,14 @@
   </nav>
   <div class="content">
     <goods></goods>
-
   </div>
 
   <addedList show={viewList} class="cart"></addedList>
+  <div class="wechat">
+    <wechat-info></wechat-info>
+  </div>
+
+
 
   <script>
     this.item = 0;
@@ -31,6 +35,7 @@
       padding: 10px 0;
       text-align: center;
       transition: all 1s;
+      background: #fff;
     }
 
     nav h1, nav div {
@@ -88,8 +93,5 @@
       transform: scale(1.15);
     }
 
-    .chart {
-
-    }
   </style>
 </home>
