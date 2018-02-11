@@ -3,7 +3,7 @@ riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick
   this.goods = [
     {
       name: '风扇',
-      img: ['../img/fan1.jpg'],
+      img: ['http://res.cloudinary.com/shuaiyuan/image/upload/c_scale,h_996/v1518323224/fan1_iscosk.png'],
       description: '9月份购入，使用不到2个月后吃灰，原价50，现25。',
       price: 20
     },
