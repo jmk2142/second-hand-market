@@ -1,6 +1,6 @@
 
 <wechat-info>
-      <img src="../img/wechat-info.jpg" alt="wechat-img" class="wechat-img wechat-zoom" onclick={checkWechat}>
+      <img src="../img/wechat-info.JPG" alt="wechat-img" class="wechat-img wechat-zoom" onclick={checkWechat}>
   <script>
     this.checkWechat = function(event) {
       event.target.classList.toggle("middle");
