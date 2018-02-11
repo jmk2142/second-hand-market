@@ -23,13 +23,13 @@
       name: '风扇',
       img: ['http://res.cloudinary.com/shuaiyuan/image/upload/c_scale,h_996/v1518323224/fan1_iscosk.png'],
       description: '9月份购入，使用不到2个月后吃灰，原价50，现25。',
-      price: 20
+      price: 25
     },
     {
-      name: 'Humidifier',
-      img: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwB1sD_-U6w66493b2mejXM-f3Uw8lvlxypWuKlNHZEh2-1AB'],
+      name: 'Dell显示器',
+      img: ['http://res.cloudinary.com/shuaiyuan/image/upload/v1518326164/monitor2_czrnsm.png'],
       description: 'This is a pretty fancy staff',
-      price: 20
+      price: 250
     },
     {
       name: 'Chair',
