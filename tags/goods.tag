@@ -13,9 +13,7 @@
     </div>
   </div>
   <detail show={showDetail} title={itemName}>
-    <img src={this.parent.imgSource} alt="">
-    <p>{this.parent.description}</p>
-    <h3>{this.parent.itemName}</h3>
+
   </detail>
   <script>
   this.goods = [
@@ -26,9 +24,9 @@
       price: 25
     },
     {
-      name: 'Dell显示器',
+      name: 'Dell 4K 24寸显示器',
       img: ['http://res.cloudinary.com/shuaiyuan/image/upload/v1518326164/monitor2_czrnsm.png'],
-      description: 'This is a pretty fancy staff',
+      description: '目前市场上适配macbook pro 2015及以上版本最好的24寸4K显示器，我的是2015最低配Macbook Pro，流畅运行，写代码，剪视频，做设计，写论文完全无压力。使用了5个月，原价350$，现250$。',
       price: 250
     },
     {
@@ -90,10 +88,12 @@
     that.imgSource = src;
     that.description = description;
     that.update();
+    document.querySelector('body').classList.add('prevent-scroll')
   }
 
   this.closeDetail = function(e) {
     that.showDetail = false;
+    document.querySelector('body').classList.remove('prevent-scroll')
     this.update();
   }
 
@@ -152,6 +152,8 @@
       box-shadow: 5px 10px 20px rgba(200, 200, 200, 0.9);
       max-width: 300px;
       position: relative;
+      /*prevent blinking due to the scale animation*/
+      transform: translate3d(0, 0, 0);
     }
 
     .good img {
@@ -174,7 +176,7 @@
       content: "";
       position: absolute;
       top: 0;
-      left: 0;
+      left: -1px;
       width: inherit;
       height: 0px;
       background: #222;
@@ -193,7 +195,7 @@
 
     .good:hover {
       cursor: pointer;
-      transform: scale(1.01);
+      transform: scale(1.005);
       box-shadow: 5px 10px 20px rgba(100, 100, 100, 0.5);
     }
     .good_name {

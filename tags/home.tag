@@ -34,8 +34,7 @@
     nav {
       padding: 10px 0;
       text-align: center;
-      transition: all 1s;
-      background: #fff;
+      transition: all .2s;
     }
 
     nav h1, nav div {
@@ -52,7 +51,7 @@
 
     nav div .fa-shopping-cart {
       font-size: 1.5em;
-      line-height: 28px;
+      line-height: 40px;
     }
 
     #shop-number {
@@ -65,23 +64,23 @@
       line-height: 20px;
       font-size: 8px;
       border: 1px solid #fff;
-      top: -19px;
+      top: -15px;
       right: -34px;
     }
 
     .nav-follow {
-      border-bottom: 1px solid #ccc;
+      padding: 3px;
+      /*border-bottom: 1px solid #ccc;*/
       background: rgba(10, 10, 10, 0.98);
       color: #fff;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 100;
-
     }
 
     .content-backup {
-      padding-top: 87.81px;
+      padding-top: 87px;
     }
 
     .shopping-cart:hover {

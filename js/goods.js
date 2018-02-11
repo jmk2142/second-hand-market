@@ -1,5 +1,5 @@
 
-riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick="{check}"> <div class="price"> <span>{price} $</span> </div> <div class="imgList" ref="imgList"> <img riot-src="{i}" alt="" name="{name}" each="{i in img}" class="image"> </div> <button type="button" name="button" onclick="{add}">加入购物车</button> <p class="good_name">{name}</p> </div> </div> <detail show="{showDetail}" title="{itemName}"> <img riot-src="{this.parent.imgSource}" alt=""> <p>{this.parent.description}</p> <h3>{this.parent.itemName}</h3> </detail>', 'goods p,[data-is="goods"] p{ color: #000; } goods .Goods,[data-is="goods"] .Goods{ display: flex; flex-wrap: wrap; justify-content: center; text-align: right; } goods .good,[data-is="goods"] .good{ margin: 10px; border: 1px solid #ccc; transition: all 0.4s; padding: 10px; border-radius: 5px; box-shadow: 5px 10px 20px rgba(200, 200, 200, 0.9); max-width: 300px; position: relative; } goods .good img,[data-is="goods"] .good img{ width: 100%; transition: all .4s; } goods .good button,[data-is="goods"] .good button{ float: left; width: 100px; height: 30px; background: transparent; border: 1px solid #222; position: relative; margin-top: 10px; } goods .good button:after,[data-is="goods"] .good button:after{ content: ""; position: absolute; top: 0; left: 0; width: inherit; height: 0px; background: #222; transition: all .2s; z-index: -100; } goods .good button:hover,[data-is="goods"] .good button:hover{ color: #fff; cursor: pointer; } goods .good button:hover:after,[data-is="goods"] .good button:hover:after{ height: 30px; } goods .good:hover,[data-is="goods"] .good:hover{ cursor: pointer; transform: scale(1.01); box-shadow: 5px 10px 20px rgba(100, 100, 100, 0.5); } goods .good_name,[data-is="goods"] .good_name{ transition: all 0.3s; margin: 5px 0; margin-right: 10px; } goods .good:hover .good_name,[data-is="goods"] .good:hover .good_name{ color: rgb(12, 27, 62); } goods .price,[data-is="goods"] .price{ position: absolute; width: 50px; height: 50px; border-radius: 10px; top: 20px; right: 20px; background: rgba(10, 10, 10, 0.8); display: flex; justify-content: center; align-items: center; color: #fff; }', '', function(opts) {
+riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick="{check}"> <div class="price"> <span>{price} $</span> </div> <div class="imgList" ref="imgList"> <img riot-src="{i}" alt="" name="{name}" each="{i in img}" class="image"> </div> <button type="button" name="button" onclick="{add}">加入购物车</button> <p class="good_name">{name}</p> </div> </div> <detail show="{showDetail}" title="{itemName}"> </detail>', 'goods p,[data-is="goods"] p{ color: #000; } goods .Goods,[data-is="goods"] .Goods{ display: flex; flex-wrap: wrap; justify-content: center; text-align: right; } goods .good,[data-is="goods"] .good{ margin: 10px; border: 1px solid #ccc; transition: all 0.4s; padding: 10px; border-radius: 5px; box-shadow: 5px 10px 20px rgba(200, 200, 200, 0.9); max-width: 300px; position: relative; transform: translate3d(0, 0, 0); } goods .good img,[data-is="goods"] .good img{ width: 100%; transition: all .4s; } goods .good button,[data-is="goods"] .good button{ float: left; width: 100px; height: 30px; background: transparent; border: 1px solid #222; position: relative; margin-top: 10px; } goods .good button:after,[data-is="goods"] .good button:after{ content: ""; position: absolute; top: 0; left: -1px; width: inherit; height: 0px; background: #222; transition: all .2s; z-index: -100; } goods .good button:hover,[data-is="goods"] .good button:hover{ color: #fff; cursor: pointer; } goods .good button:hover:after,[data-is="goods"] .good button:hover:after{ height: 30px; } goods .good:hover,[data-is="goods"] .good:hover{ cursor: pointer; transform: scale(1.005); box-shadow: 5px 10px 20px rgba(100, 100, 100, 0.5); } goods .good_name,[data-is="goods"] .good_name{ transition: all 0.3s; margin: 5px 0; margin-right: 10px; } goods .good:hover .good_name,[data-is="goods"] .good:hover .good_name{ color: rgb(12, 27, 62); } goods .price,[data-is="goods"] .price{ position: absolute; width: 50px; height: 50px; border-radius: 10px; top: 20px; right: 20px; background: rgba(10, 10, 10, 0.8); display: flex; justify-content: center; align-items: center; color: #fff; }', '', function(opts) {
   this.goods = [
     {
       name: '风扇',
@@ -8,9 +8,9 @@ riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick
       price: 25
     },
     {
-      name: 'Dell显示器',
+      name: 'Dell 4K 24寸显示器',
       img: ['http://res.cloudinary.com/shuaiyuan/image/upload/v1518326164/monitor2_czrnsm.png'],
-      description: 'This is a pretty fancy staff',
+      description: '目前市场上适配macbook pro 2015及以上版本最好的24寸4K显示器，我的是2015最低配Macbook Pro，流畅运行，写代码，剪视频，做设计，写论文完全无压力。使用了5个月，原价350$，现250$。',
       price: 250
     },
     {
@@ -71,10 +71,12 @@ riot.tag2('goods', '<div class="Goods"> <div class="good" each="{goods}" onclick
     that.imgSource = src;
     that.description = description;
     that.update();
+    document.querySelector('body').classList.add('prevent-scroll')
   }
 
   this.closeDetail = function(e) {
     that.showDetail = false;
+    document.querySelector('body').classList.remove('prevent-scroll')
     this.update();
   }
 

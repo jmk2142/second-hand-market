@@ -1,13 +1,18 @@
 <detail>
 
     <div class='container' onclick={parent.closeDetail}>
-      <div class="">
-        <yield/>
+      <div class="" id="detail-container">
+        <img src={this.parent.imgSource} alt="" onclick={viewImage} border="1" id="detail-image">
+        <p>{this.parent.description}</p>
+        <h2>{this.parent.itemName}</h2>
       </div>
     </div>
 
   <script>
-    
+    this.viewImage = function(event) {
+      window.open(event.currentTarget.src)
+      event.stopPropagation();
+    }
   </script>
 
   <style scoped>
@@ -17,7 +22,8 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(10, 10, 10, 0.8);
+      background: rgba(10, 10, 10, 0.9);
+      overflow: auto;
     }
 
     /*.container h3 {
@@ -63,6 +69,13 @@
       flex-basis: 1;
       width: 50%;
       height: auto;
+      padding: 10px;
+      transition: all .3s;
+    }
+
+    .container img:hover {
+      cursor: pointer;
+      transform: scale(1.02);
     }
 
     .container p {
@@ -71,7 +84,7 @@
       text-align: center;
     }
 
-    .container h3 {
+    .container h2 {
       margin-top: 50px;
       text-align: center;
       flex-basis: 100%;
