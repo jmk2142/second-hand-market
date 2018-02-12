@@ -15,7 +15,7 @@
   <div class="wechat">
     <wechat-info></wechat-info>
   </div>
-
+  <footer></footer>
 
 
   <script>
@@ -48,7 +48,7 @@
       line-height: 28px;
       position: relative;
       margin-right: 20px;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     nav div .fa-shopping-cart {

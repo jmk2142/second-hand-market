@@ -15,6 +15,11 @@
     overflow: hidden;
   }
 
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+
   @@font-face {
     font-family: "Gotham SSm";
     src: url(fonts/GothamNarrow-Thin.otf);
@@ -26,23 +31,24 @@
     };
   }
 
-  /*@media screen and (max-width: 570px) {
-    #detail-container img{
-      width: 70%;
+  @media screen and (max-width: 570px) {
+    #detail-description {
+      padding: 20px 10px 30px;
     }
-  }*/
+  }
   </style>
 </head>
 <body>
   <home></home>
 
-  <script src="https://use.fontawesome.com/a83dd58713.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/riot@3.8/riot.min.js"></script>
   <script src="js/home.js"></script>
   <script src="js/goods.js"></script>
   <script src="js/detail.js"></script>
   <script src="js/addedList.js"></script>
   <script src="js/wechat-info.js"></script>
+  <script src="js/footer.js"></script>
   <script src="js/itemManager.js"></script>
   <script type="text/javascript">
     riot.mount("*");

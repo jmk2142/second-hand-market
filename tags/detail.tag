@@ -6,7 +6,7 @@
         <div class="detail-images">
           <img src={i} alt="" style="border-color: white" border="1" onclick={viewImage} id="detail-image" each = {i in this.parent.imgSource}>
         </div>
-        <p>{this.parent.description}</p>
+        <p id="detail-description">{this.parent.description}</p>
       </div>
     </div>
 
