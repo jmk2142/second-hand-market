@@ -11,7 +11,7 @@
     <ul class="list" show={this.parent.itemList.length}>
       <li each={ i in this.parent.itemList}> {i}</li>
     </ul>
-    <p hide={this.parent.itemList.length}>
+    <p hide={this.parent.itemList.length} class="default-text">
       Nothing in the cart, please pick up some stuff.
     </p>
   </div>
@@ -108,6 +108,10 @@
     h3, p {
       color: #fff;
       padding-left: 20px;
+    }
+
+    .default-text {
+      color: #aaa;
     }
 
   </style>

@@ -35,6 +35,7 @@
       padding: 10px 0;
       text-align: center;
       transition: all .2s;
+      transform: translate3d(0, 0, 0);
     }
 
     nav h1, nav div {

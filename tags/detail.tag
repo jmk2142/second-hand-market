@@ -1,10 +1,12 @@
 <detail>
 
     <div class='container' onclick={parent.closeDetail}>
-      <div class="" id="detail-container">
-        <img src={this.parent.imgSource} alt="" onclick={viewImage} border="1" id="detail-image">
+      <h2>{this.parent.itemName}</h2>
+      <div class="detail-container" id="detail-container">
+        <div class="detail-images">
+          <img src={i} alt="" style="border-color: white" border="1" onclick={viewImage} id="detail-image" each = {i in this.parent.imgSource}>
+        </div>
         <p>{this.parent.description}</p>
-        <h2>{this.parent.itemName}</h2>
       </div>
     </div>
 
@@ -24,7 +26,51 @@
       right: 0;
       background: rgba(10, 10, 10, 0.9);
       overflow: auto;
+      /*padding: 0 5%;*/
+      padding-top: 5%;
     }
+
+    /*the best way of styling detail layer*/
+
+    .container h2 {
+      color: #fff;
+      text-align: center;
+    }
+
+    .detail-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .detail-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
+    }
+
+    .container img {
+        width: 90%;
+        padding: 10px;
+        transition: all .3s;
+        margin: 10px 0;
+    }
+
+    .container img:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+
+    .detail-container p {
+      color: #fff;
+      text-align: left;
+      max-width: 400px;
+    }
+
+
+    /*the first way of stying detail layer*/
+
 
     /*.container h3 {
       color: #fff;
@@ -55,7 +101,9 @@
       right: 20%;
     }*/
 
-    .container > div {
+  /*the second way of stying detail layer*/
+
+    /*.container > div {
       display: flex;
       color: #fff;
       justify-content: space-around;
@@ -88,7 +136,7 @@
       margin-top: 50px;
       text-align: center;
       flex-basis: 100%;
-    }
+    }*/
 
 
 
