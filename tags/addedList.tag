@@ -57,6 +57,9 @@
       transition: all .4s;
       background: transparent;
       color: #fff;
+      font-weight: 100;
+      letter-spacing: normal;
+      font-family: 'Gotham SSm', sans-serif;
     }
 
     .stick-top button:hover {
@@ -112,6 +115,7 @@
 
     .default-text {
       color: #aaa;
+      font-family: 'Gotham SSm', sans-serif;
     }
 
   </style>

@@ -170,6 +170,13 @@
       border: 1px solid #222;
       position: relative;
       margin-top: 10px;
+      font-family: 'Gotham SSm', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .091em;
+      text-transform: uppercase;
+      padding: 0;
+      line-height: 30px;
     }
 
     .good button:after {
@@ -207,6 +214,10 @@
       overflow: hidden;
       width: 170px;
       float: right;
+      font-weight: 100;
+      letter-spacing: normal;
+      font-family: 'Gotham SSm', sans-serif;
+      color: #767676
     }
     .good:hover .good_name {
       color: rgb(12, 27, 62);
@@ -224,6 +235,8 @@
       justify-content: center;
       align-items: center;
       color: #fff;
+      font-family: 'Gotham SSm', sans-serif;
+      font-weight: 300;
     }
 
     /*.imgList {

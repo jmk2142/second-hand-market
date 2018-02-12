@@ -35,6 +35,10 @@
     .container h2 {
       color: #fff;
       text-align: center;
+      font-weight: 500;
+      font-family: 'Gotham SSm', sans-serif;
+      line-height: 1.375em;
+      letter-spacing: .1875em;
     }
 
     .detail-container {
@@ -66,6 +70,9 @@
       color: #fff;
       text-align: left;
       max-width: 400px;
+      font-family: 'Gotham SSm', sans-serif;
+      font-size: 13px;
+      line-height: 2em;
     }
 
 

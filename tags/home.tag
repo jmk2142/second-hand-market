@@ -36,6 +36,7 @@
       text-align: center;
       transition: all .2s;
       transform: translate3d(0, 0, 0);
+      font-family: 'Circular', sans-serif;
     }
 
     nav h1, nav div {
